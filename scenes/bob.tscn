@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://csk5wldm7chee"]
+
+[ext_resource type="Texture2D" uid="uid://8ltm4fc06a0n" path="res://icon.svg" id="1_jp6ag"]
+
+[node name="Bob" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jp6ag")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64)

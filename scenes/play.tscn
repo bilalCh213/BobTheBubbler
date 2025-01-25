@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsg8st4uri63j"]
+
+[ext_resource type="PackedScene" uid="uid://csk5wldm7chee" path="res://scenes/bob.tscn" id="1_aex6u"]
+[ext_resource type="Script" path="res://scripts/bob.gd" id="2_xkarn"]
+
+[sub_resource type="Gradient" id="Gradient_232b0"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pt7p2"]
+gradient = SubResource("Gradient_232b0")
+width = 1
+
+[node name="Play" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Level"]
+position = Vector2(32, 323.5)
+scale = Vector2(64, 647)
+texture = SubResource("GradientTexture1D_pt7p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Sprite2D"]
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Sprite2D/StaticBody2D"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Level"]
+position = Vector2(368, 32)
+scale = Vector2(1147, 64)
+texture = SubResource("GradientTexture1D_pt7p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Sprite2D3"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Level/Sprite2D3/StaticBody2D"]
+polygon = PackedVector2Array(-0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Level"]
+position = Vector2(360, 616)
+scale = Vector2(1147, 64)
+texture = SubResource("GradientTexture1D_pt7p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Sprite2D4"]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Level/Sprite2D4/StaticBody2D"]
+polygon = PackedVector2Array(-0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Level"]
+position = Vector2(798, 467)
+scale = Vector2(1147, 64)
+texture = SubResource("GradientTexture1D_pt7p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Sprite2D5"]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Level/Sprite2D5/StaticBody2D"]
+polygon = PackedVector2Array(-0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level"]
+position = Vector2(1115, 325)
+scale = Vector2(64, 647)
+texture = SubResource("GradientTexture1D_pt7p2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Sprite2D2"]
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Level/Sprite2D2/StaticBody2D"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5)
+
+[node name="Bob" parent="." instance=ExtResource("1_aex6u")]
+position = Vector2(267, 375)
+script = ExtResource("2_xkarn")

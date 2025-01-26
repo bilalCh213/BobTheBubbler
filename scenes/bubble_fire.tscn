@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://qpcedb4uqh4l"]
+
+[ext_resource type="Texture2D" uid="uid://bidfw1db5np57" path="res://external/circle_01.png" id="1_jac1d"]
+[ext_resource type="Script" path="res://scripts/bubble_fire.gd" id="1_wlc6i"]
+[ext_resource type="Texture2D" uid="uid://c3x571f73ggqv" path="res://external/light_03.png" id="2_c0uoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mosc"]
+radius = 18.0
+
+[node name="BubbleFire" type="Area2D"]
+script = ExtResource("1_wlc6i")
+speed = 1000.0
+decay = 2500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_jac1d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_c0uoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3mosc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

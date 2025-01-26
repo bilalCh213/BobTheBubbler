@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://dsg8st4uri63j"]
+[gd_scene load_steps=7 format=4 uid="uid://dsg8st4uri63j"]
 
 [ext_resource type="Texture2D" uid="uid://royimx80gbmr" path="res://external/blue_grass.png" id="1_5bqys"]
 [ext_resource type="PackedScene" uid="uid://csk5wldm7chee" path="res://scenes/bob.tscn" id="1_aex6u"]
 [ext_resource type="Texture2D" uid="uid://clo7qt454glmx" path="res://external/ground_tilesheet.png" id="3_dtjs8"]
-[ext_resource type="PackedScene" uid="uid://b818t21jv1a7p" path="res://scenes/enemy.tscn" id="4_t0rxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg120"]
 texture = ExtResource("3_dtjs8")
@@ -93,92 +92,5 @@ shape = SubResource("RectangleShape2D_6tk2u")
 
 [node name="TransferPosition" type="Node2D" parent="BottomFallDetector"]
 position = Vector2(0, -824)
-
-[node name="Enemy" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(388, 352)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(902, 352)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(892, 224)
-type = "slime"
-speed = 80.0
-
-[node name="Enemy4" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(387, 224)
-type = "slime"
-speed = 80.0
-
-[node name="Enemy5" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(291, 479)
-type = "snail"
-speed = 50.0
-
-[node name="Enemy7" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(389, 95)
-type = "mouse"
-speed = 150.0
-
-[node name="Enemy8" parent="." instance=ExtResource("4_t0rxp")]
-position = Vector2(901, 95)
-type = "mouse"
-speed = 150.0
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Gameover" type="Panel" parent="UI"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UI/Gameover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Gameover! Try again."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="WinScreen" type="Panel" parent="UI"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UI/WinScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "You win! Good job."
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="BottomFallDetector" to="Bob" method="_on_bottom_fall_detector_entered"]

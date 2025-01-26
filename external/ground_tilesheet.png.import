@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy4nx4dgh5yb6"
-path="res://.godot/imported/fly_dead.png-30a9a47091a49f35bb2d05d9626a08b9.ctex"
+uid="uid://clo7qt454glmx"
+path="res://.godot/imported/ground_tilesheet.png-22b1312696a3edaea1fefe3539cb797d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://external/Enemies/fly_dead.png"
-dest_files=["res://.godot/imported/fly_dead.png-30a9a47091a49f35bb2d05d9626a08b9.ctex"]
+source_file="res://external/ground_tilesheet.png"
+dest_files=["res://.godot/imported/ground_tilesheet.png-22b1312696a3edaea1fefe3539cb797d.ctex"]
 
 [params]
 

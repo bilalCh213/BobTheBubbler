@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://b818t21jv1a7p"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_e51om"]
+[ext_resource type="Texture2D" uid="uid://x60638mu7i2i" path="res://external/Enemies/ladybug.png" id="5_l24kg"]
+[ext_resource type="Texture2D" uid="uid://bxgsekhjksvhu" path="res://external/Enemies/ladybug_move.png" id="6_gdxfd"]
+[ext_resource type="Texture2D" uid="uid://b26oymlqc2x68" path="res://external/Enemies/mouse.png" id="7_sy8p0"]
+[ext_resource type="Texture2D" uid="uid://bpnibib4k2l4x" path="res://external/Enemies/mouse_move.png" id="8_tqoq6"]
+[ext_resource type="Texture2D" uid="uid://bjrjbwvq4pab" path="res://external/Enemies/slimeGreen.png" id="9_i4l0y"]
+[ext_resource type="Texture2D" uid="uid://rkg0kp1m2nn0" path="res://external/Enemies/slimeGreen_move.png" id="10_pfwxq"]
+[ext_resource type="Texture2D" uid="uid://cvpd13p48t31d" path="res://external/Enemies/snail.png" id="11_ixwq1"]
+[ext_resource type="Texture2D" uid="uid://c6kmqael78xts" path="res://external/Enemies/snail_move.png" id="12_oahtg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_unjnd"]
+radius = 28.0
+height = 90.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qjum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_l24kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gdxfd")
+}],
+"loop": true,
+"name": &"ladybug",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sy8p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tqoq6")
+}],
+"loop": true,
+"name": &"mouse",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i4l0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pfwxq")
+}],
+"loop": true,
+"name": &"slime",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ixwq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oahtg")
+}],
+"loop": true,
+"name": &"snail",
+"speed": 16.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("raycast_left", "raycast_right")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_e51om")
+raycast_left = NodePath("RaycastLeft")
+raycast_right = NodePath("RaycastRight")
+
+[node name="EnemyArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyArea"]
+position = Vector2(0, 36)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_unjnd")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8qjum")
+animation = &"ladybug"
+frame_progress = 0.215873
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 36)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_unjnd")
+
+[node name="RaycastLeft" type="RayCast2D" parent="."]
+position = Vector2(-48, 48)
+target_position = Vector2(0, 32)
+
+[node name="RaycastRight" type="RayCast2D" parent="."]
+position = Vector2(48, 48)
+target_position = Vector2(0, 32)
+
+[connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_entered"]

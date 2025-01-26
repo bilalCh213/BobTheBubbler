@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy4nx4dgh5yb6"
-path="res://.godot/imported/fly_dead.png-30a9a47091a49f35bb2d05d9626a08b9.ctex"
+uid="uid://royimx80gbmr"
+path="res://.godot/imported/blue_grass.png-81c9aa78b541da3456c1a5cd9f567b8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://external/Enemies/fly_dead.png"
-dest_files=["res://.godot/imported/fly_dead.png-30a9a47091a49f35bb2d05d9626a08b9.ctex"]
+source_file="res://external/blue_grass.png"
+dest_files=["res://.godot/imported/blue_grass.png-81c9aa78b541da3456c1a5cd9f567b8c.ctex"]
 
 [params]
 
